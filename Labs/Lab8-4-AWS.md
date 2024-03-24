@@ -148,8 +148,10 @@ Confirm that there are now local state files
 
 ### Step Four - Clean up the resources
 
-* You can skip this step if you want to continue using your remote backend.
-* Go to the S3 console and delete the contents of your bucket
-* Run terraform destroy in the backend directory to remove the remote backen bucket and lock table
+You can skip this step if you want to continue using your remote backend.
+
+Go to the S3 console and delete the contents of your bucket. Terraform cannot delete the bucket unless it is empty.
+
+Run terraform destroy in the backend directory to remove the remote backend bucket and lock table
 
 ### Done

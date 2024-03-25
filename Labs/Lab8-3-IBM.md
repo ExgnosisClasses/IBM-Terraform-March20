@@ -1,4 +1,4 @@
-# Lab 8-3 AWS  - State Workspaces
+# Lab 8-3 IBM  - State Workspaces
 
 ## Part 3
 
@@ -64,7 +64,7 @@ Remember that git is versioning the Terraform source code, _not the workspaces_.
 
 In the lab directory you just used, add the following .gitignore file to avoid versioning the Terraform managed file. This file is also in the code directory for Lab 8-3.
 
-Tag the VM with the name "Production"
+Tag the VM with the name "production"
 
 ```gitignore
 **/.terraform/*
@@ -76,55 +76,14 @@ Tag the VM with the name "Production"
 
 ```
 
-Create a .git repository in the directory you are using and commit the .gitignore file and  **only the `*tf` files that will be changed** 
+Create a .git repository in the directory you are using and commit the .gitignore file and **only the `*tf` files that will be changed**.
 
 Now run `terraform apply` to create the production deployment
 
 ## Part Two - Branch
 
-Create a git branch called dev using the git command and check it out.
+The AWS solution does not work for the IBM Terraform code we have.
 
-```console
-git branch dev
-git checkout dev
-```
-
-Confirm you are on the dev branch by checking with `git branch`
-
-Change the instance type to `t2.nano` and the Name of the VM to 'Development'
-
-Save the files and commit the code to the `dev` branch
-
-Create the Terraform dev workspace `terraform workspace new dev` Remember that Terraform will automatically switch you to the workspace when you create it.
-
-Run `terraform apply` to create the `dev` deployment.
- 
-Confirm at the console that you have two different machines deployed.
-
-
-## Switching Deployments.
-
-The problem we had before was that there was one copy of the code used in two different two workspaces . Now each deployment or workspace corresponds to one version of the code
-
-Run `terraform plan` to confirm no changes need to be made
-
-## Switch workspaces and git branches
-
-```console
-$ terraform workspace select default
-Switched to workspace "default".
-$ git checkout main
-Switched to branch 'main'
-```
-
-Run `terraform plan` to see that no changes are needed.
-
-## Clean up
-
-Run `terraform destroy` in the default workspace
-
-The switch to the `dev` workspace and run `terraform destroy` again
-
-Confirm at the console that both VMs are terminated.
+What is the solution to make it work?
 
 ## End Lab

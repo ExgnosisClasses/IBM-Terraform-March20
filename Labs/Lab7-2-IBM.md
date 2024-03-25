@@ -137,7 +137,7 @@ Now we have to add the two new modules and pass their return values to the compu
 In the `main.td` file add the following module calls and pass the three new variable values to the vm module.
 
 ```terraform
-odule "vm" {
+module "vm" {
     source = "../modules/vm"
     vm_image = var.vm_image
     vm_profile = var.vm_profile
